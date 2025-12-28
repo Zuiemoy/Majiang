@@ -3,7 +3,7 @@
                            disregarding any border width and padding width */
 }
 html {
-    font-size: 30px;
+    font-size: 25px;
 }
 input, textarea {
     font-size: 20px;
@@ -64,42 +64,42 @@ div{
     margin-right: auto;
 }
 #innerBoxE-1{
-    width: 30%;
+    width: 40%;
     float: left;
     border: 0px;
 }
 #innerBoxE-2{
-    width: 70%;
+    width: 60%;
     float: left;
     border: 0px;
 }
 #innerBoxW-1{
-    width: 30%;
+    width: 40%;
     float: left;
     border: 0px;
 }
 #innerBoxW-2{
-    width: 70%;
+    width: 60%;
     float: left;
     border: 0px;
 }
 #innerBoxS-1{
-    width: 30%;
+    width: 40%;
     float: left;
     border: 0px;
 }
 #innerBoxS-2{
-    width: 70%;
+    width: 60%;
     float: left;
     border: 0px;
 }
 #innerBoxN-1{
-    width: 30%;
+    width: 40%;
     float: left;
     border: 0px;
 }
 #innerBoxN-2{
-    width: 70%;
+    width: 60%;
     float: left;
     border: 0px;
 }
@@ -191,6 +191,7 @@ th, td{
     margin: 5px;
     margin-bottom: 5px; /* spacing between two h2 */
 }
+
 
 
 
