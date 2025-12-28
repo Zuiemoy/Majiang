@@ -2,6 +2,12 @@
     box-sizing: border-box; /* calculate the box size ()height & width)
                            disregarding any border width and padding width */
 }
+html {
+    font-size: 30px;
+}
+input, textarea {
+    font-size: 20px;
+}
 body{
     background-color: rgb(30, 90, 30);
 }
@@ -34,16 +40,23 @@ button{
     border: 2px solid white;
     border-radius: 5px;
     cursor: pointer;
+    font-size: 20px;
+    margin-left: auto;
+    margin-right: auto;
+}
+#playerNoNext{
+    display: block;
+    margin: 0 auto;
 }
 #flower{
     text-align: center;
-    width: 50px;;
+    width: 50px;
 }
 .inGame{
     display: none;
 }
 div{
-    max-width: 480px;
+    max-width: 600px;
     border-radius: 5px;
     padding: 10px;
     overflow: hidden;
@@ -94,11 +107,7 @@ div{
     text-align: center;
     border: 0px;
 }
-button{
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-}
+
 #inputSection{
     text-align: center;
     border: 0px;
@@ -143,7 +152,7 @@ th, td{
 }
 .nextButton{
     display: none;
-    margin-left: 25%;
+    margin-left: 13%;
     margin-right: auto;
 }
 #totalScoreTitle{
@@ -172,7 +181,7 @@ th, td{
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin-top: 30px;
+    margin-top: 0px;
     text-align: center;
 }
 

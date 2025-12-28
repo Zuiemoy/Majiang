@@ -325,7 +325,9 @@ function checkBox(boxId) {
 }
 
 document.getElementById("finishRound").onclick = function() {
-
+    if (checkBox("eastLoseCheck") == false && checkBox("southLoseCheck") == false && checkBox("westLoseCheck") == false && checkBox("northLoseCheck") == false && checkBox("allLoseCheck") == false) {
+        alert("请选择放炮！");
+    } else {
     /*if (playerNo == 3) {
 
         hunyiseE = document.getElementById("hunyiseE").checked;
@@ -664,8 +666,57 @@ document.getElementById("finishRound").onclick = function() {
         for (let element of scoreBoard) {
             element.style.visibility = "visible";
         }
+        document.getElementById("prevGame").style.display = "inline-block";
         document.getElementById("nextGame").style.display = "inline-block";
         document.getElementById("endGame").style.display = "inline-block";
+    }
+}
+
+// 回到上一轮游戏
+document.getElementById("prevGame").onclick = function() {
+    // 隐藏总分
+    document.getElementById("totalScoreTitle").style.display = "none";
+    scoreBoard = document.getElementsByClassName("scoreBoard");
+        for (let element of scoreBoard) {
+            element.style.visibility = "hidden";
+        }
+    document.getElementById("prevGame").style.display = "none";
+    document.getElementById("nextGame").style.display = "none";
+    document.getElementById("endGame").style.display = "none";
+    // 显示计分选项
+    inGame = document.getElementsByClassName("inGame");
+    for (let element of inGame) {
+        element.style.display = "inline";
+    }
+    parentDiv = document.getElementsByClassName("parentDiv");
+    for (let element of parentDiv) {
+        element.style.border = "2px solid white";
+        element.style.display = "block";
+    }
+    titleSection = document.getElementsByClassName("titleSection");
+    for (let element of titleSection) {
+        element.style.display = "block";
+    }
+    document.getElementById("finishRound").style.display = "block";
+    document.getElementById("gameCount").style.display = "block";
+    //显示所有放炮选项
+    document.getElementById("eastLoseCheck").style.visibility = "visible";
+    document.getElementById("eastLose").style.visibility = "visible";
+    document.getElementById("southLoseCheck").style.visibility = "visible";
+    document.getElementById("southLose").style.visibility = "visible";
+    document.getElementById("westLoseCheck").style.visibility = "visible";
+    document.getElementById("westLose").style.visibility = "visible";
+    document.getElementById("northLoseCheck").style.visibility = "visible";
+    document.getElementById("northLose").style.visibility = "visible";
+    document.getElementById("allLoseCheck").style.visibility = "visible";
+    document.getElementById("allLose").style.visibility = "visible";
+    // 显示游戏局数
+    document.getElementById("gameCount").innerText = `第 ${gameCount + 1} 局\n`;
+    // 清空上一轮计分
+    eastScore[gameCount] = 0;
+    southScore[gameCount] = 0;
+    westScore[gameCount] = 0;
+    northScore[gameCount] = 0;
 }
 
 
@@ -684,8 +735,9 @@ document.getElementById("nextGame").onclick = function() {
         for (let element of scoreBoard) {
             element.style.visibility = "hidden";
         }
-        document.getElementById("nextGame").style.display = "none";
-        document.getElementById("endGame").style.display = "none";
+    document.getElementById("prevGame").style.display = "none";
+    document.getElementById("nextGame").style.display = "none";
+    document.getElementById("endGame").style.display = "none";
 
     // 显示计分选项
     inGame = document.getElementsByClassName("inGame");
@@ -723,6 +775,7 @@ document.getElementById("nextGame").onclick = function() {
 
 // 结束游戏
 document.getElementById("endGame").onclick = function() {
+    document.getElementById("prevGame").style.display = "none";
     document.getElementById("nextGame").style.display = "none";
     document.getElementById("endGame").style.display = "none";
     finalWin = document.getElementsByClassName("finalWin");
